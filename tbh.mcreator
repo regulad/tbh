@@ -1,0 +1,85 @@
+{
+  "mod_elements": [
+    {
+      "name": "TbhCreature",
+      "type": "livingentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tbh_creature"
+    },
+    {
+      "name": "Cum",
+      "type": "fluid",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cum",
+      "metadata": {
+        "gb": true
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "squirt",
+      "files": [
+        "squirt0",
+        "squirt1"
+      ],
+      "category": "neutral",
+      "subtitle": "Something Squirts"
+    },
+    {
+      "name": "yippee",
+      "files": [
+        "yippee"
+      ],
+      "category": "neutral",
+      "subtitle": "Creature Celebrates "
+    },
+    {
+      "name": "silence",
+      "files": [
+        "silence"
+      ],
+      "category": "neutral",
+      "subtitle": "Creature exudes its presence"
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "item.tbh.cum_bucket": "Cum Bucket",
+      "item.tbh.tbh_creature_spawn_egg": "Autism Creature Spawn Egg",
+      "subtitles.squirt": "Something Squirts",
+      "entity.tbh.tbh_creature": "Autism Creature",
+      "subtitles.yippee": "Creature Celebrates ",
+      "fluid.tbh.cum": "Cum",
+      "subtitles.silence": "Creature exudes its presence",
+      "block.tbh.cum": "Cum"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "tbh",
+    "modName": "tbh",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "Yippee!",
+    "author": "regulad",
+    "license": "GNU General Public License version 3 (GPLv3)",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "modElementsPackage": "xyz.regulad.tbh",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200120510
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 28,
+  "_type": "fluid",
+  "definition": {
+    "name": "Cum",
+    "bucketName": "Cum Bucket",
+    "textureStill": "cum_still",
+    "textureFlowing": "cum_flowing",
+    "tintType": "No tint",
+    "canMultiply": false,
+    "flowRate": 9,
+    "levelDecrease": 2,
+    "slopeFindDistance": 4,
+    "spawnParticles": false,
+    "dripParticle": {
+      "value": "EXPLOSION_NORMAL"
+    },
+    "flowStrength": 1.0,
+    "luminosity": 0,
+    "density": 1000,
+    "viscosity": 1000,
+    "isGas": false,
+    "temperature": 310,
+    "type": "WATER",
+    "generateBucket": true,
+    "textureBucket": "cum_bucket",
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "emptySound": {
+      "value": "CUSTOM:squirt"
+    },
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "resistance": 100.0,
+    "luminance": 0,
+    "lightOpacity": 0,
+    "emissiveRendering": true,
+    "tickRate": 10,
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "colorOnMap": "IRON",
+    "frequencyOnChunks": 5,
+    "spawnWorldTypes": [
+      "Surface"
+    ],
+    "restrictionBiomes": []
+  }
+}

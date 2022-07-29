@@ -1,0 +1,36 @@
+{
+  "squirt": {
+    "category": "neutral",
+    "subtitle": "subtitles.squirt",
+    "sounds": [
+      {
+        "name": "tbh:squirt0",
+        "stream": false
+      },
+      {
+        "name": "tbh:squirt1",
+        "stream": false
+      }
+    ]
+  },
+  "yippee": {
+    "category": "neutral",
+    "subtitle": "subtitles.yippee",
+    "sounds": [
+      {
+        "name": "tbh:yippee",
+        "stream": false
+      }
+    ]
+  },
+  "silence": {
+    "category": "neutral",
+    "subtitle": "subtitles.silence",
+    "sounds": [
+      {
+        "name": "tbh:silence",
+        "stream": false
+      }
+    ]
+  }
+}
