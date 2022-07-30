@@ -13,6 +13,7 @@
  */
 package xyz.regulad.tbh;
 
+import xyz.regulad.tbh.init.TbhModParticleTypes;
 import xyz.regulad.tbh.init.TbhModItems;
 import xyz.regulad.tbh.init.TbhModFluids;
 import xyz.regulad.tbh.init.TbhModFeatures;
@@ -55,6 +56,7 @@ public class TbhMod {
 		TbhModFeatures.REGISTRY.register(bus);
 		TbhModFluids.REGISTRY.register(bus);
 
+		TbhModParticleTypes.REGISTRY.register(bus);
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

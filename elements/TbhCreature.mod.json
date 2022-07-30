@@ -80,7 +80,7 @@
       "value": ""
     },
     "livingSound": {
-      "value": "CUSTOM:squirt"
+      "value": "CUSTOM:silence"
     },
     "hurtSound": {
       "value": "CUSTOM:yippee"
@@ -93,11 +93,17 @@
     },
     "spawnParticles": false,
     "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
+      "value": "CUSTOM:Confetti"
     },
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "particleAmount": 6,
+    "whenMobIsHurt": {
+      "name": "TbhCreatureEntityIsHurt"
+    },
+    "onRightClickedOn": {
+      "name": "TbhCreatureRightClickedOnEntity"
+    },
     "hasAI": true,
     "aiBase": "Chicken",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"580\" y=\"200\"></block></xml>",
