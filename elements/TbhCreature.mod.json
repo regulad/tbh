@@ -49,9 +49,9 @@
     "attackStrength": 3,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
-    "movementSpeed": 0.3,
+    "movementSpeed": 0.4,
     "armorBaseValue": 0.0,
-    "trackingRange": 64,
+    "trackingRange": 18,
     "health": 10,
     "xpAmount": 0,
     "waterMob": false,
@@ -77,7 +77,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": ""
+      "value": "CUSTOM:Cum.bucket"
     },
     "livingSound": {
       "value": "CUSTOM:silence"
@@ -104,14 +104,17 @@
     "onRightClickedOn": {
       "name": "TbhCreatureRightClickedOnEntity"
     },
+    "onInitialSpawn": {
+      "name": "TbhCreatureOnInitialEntitySpawn"
+    },
     "hasAI": true,
-    "aiBase": "Chicken",
+    "aiBase": "Wolf",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"580\" y=\"200\"></block></xml>",
     "breedable": true,
     "tameable": true,
     "breedTriggerItems": [
       {
-        "value": "CUSTOM:Cum.bucket"
+        "value": "Blocks.CANDLE#0"
       }
     ],
     "ranged": false,
@@ -130,6 +133,6 @@
         "value": "plains"
       }
     ],
-    "spawnInDungeons": false
+    "spawnInDungeons": true
   }
 }

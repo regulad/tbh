@@ -90,6 +90,98 @@
           }
         ]
       }
+    },
+    {
+      "name": "TbhCreatureOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tbh_creature_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConfettiEgg",
+      "type": "rangeditem",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "confetti_egg"
+    },
+    {
+      "name": "ConfettiEggWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "confetti_egg_while_projectile_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConfettiEggProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "confetti_egg_projectile_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -124,6 +216,7 @@
     "en_us": {
       "item.tbh.cum_bucket": "Cum Bucket",
       "item.tbh.tbh_creature_spawn_egg": "Autism Creature Spawn Egg",
+      "item.tbh.confetti_egg": "Confetti Egg",
       "subtitles.squirt": "Something Squirts",
       "entity.tbh.tbh_creature": "Autism Creature",
       "subtitles.yippee": "Creature Celebrates ",

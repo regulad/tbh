@@ -5,6 +5,7 @@
 package xyz.regulad.tbh.init;
 
 import xyz.regulad.tbh.item.CumItem;
+import xyz.regulad.tbh.item.ConfettiEggItem;
 import xyz.regulad.tbh.TbhMod;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -20,4 +21,5 @@ public class TbhModItems {
 	public static final RegistryObject<Item> TBH_CREATURE = REGISTRY.register("tbh_creature_spawn_egg",
 			() -> new ForgeSpawnEggItem(TbhModEntities.TBH_CREATURE, -1, -16777216, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> CUM_BUCKET = REGISTRY.register("cum_bucket", () -> new CumItem());
+	public static final RegistryObject<Item> CONFETTI_EGG = REGISTRY.register("confetti_egg", () -> new ConfettiEggItem());
 }

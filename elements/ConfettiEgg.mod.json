@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 0,
+    "texture": "confetti_egg",
+    "customModelName": "Normal",
+    "name": "Confetti Egg",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "stackSize": 16,
+    "ammoItem": {
+      "value": "CUSTOM:ConfettiEgg"
+    },
+    "shootConstantly": true,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 1.0,
+    "bulletDamage": 5.0,
+    "bulletKnockback": 5,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:ConfettiEgg"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletHitsBlock": {
+      "name": "ConfettiEggProjectileHitsBlock"
+    },
+    "onBulletHitsPlayer": {
+      "name": "ConfettiEggProjectileHitsBlock"
+    },
+    "onBulletFlyingTick": {
+      "name": "ConfettiEggWhileProjectileFlyingTick"
+    }
+  }
+}
