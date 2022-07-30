@@ -108,8 +108,8 @@
       "name": "TbhCreatureOnInitialEntitySpawn"
     },
     "hasAI": true,
-    "aiBase": "Wolf",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"580\" y=\"200\"></block></xml>",
+    "aiBase": "Cow",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"279\" y=\"271\"><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"doors_break\"><field name=\"condition\">null,null</field><next><block type=\"eat_grass\"><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": true,
     "tameable": true,
     "breedTriggerItems": [
@@ -117,11 +117,11 @@
         "value": "Blocks.CANDLE#0"
       }
     ],
-    "ranged": false,
+    "ranged": true,
     "rangedAttackItem": {
       "value": ""
     },
-    "rangedItemType": "Default item",
+    "rangedItemType": "ConfettiEgg",
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 18,
@@ -131,6 +131,18 @@
     "restrictionBiomes": [
       {
         "value": "plains"
+      },
+      {
+        "value": "swamp"
+      },
+      {
+        "value": "mutated_swampland"
+      },
+      {
+        "value": "snowy_tundra"
+      },
+      {
+        "value": "lush_caves"
       }
     ],
     "spawnInDungeons": true

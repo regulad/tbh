@@ -25,6 +25,18 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.EatBlockGoal;
+import net.minecraft.world.entity.ai.goal.BreedGoal;
+import net.minecraft.world.entity.ai.goal.BreakDoorGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.TamableAnimal;
@@ -34,6 +46,7 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AgeableMob;
@@ -53,8 +66,9 @@ import java.util.Set;
 import java.util.List;
 
 @Mod.EventBusSubscriber
-public class TbhCreatureEntity extends TamableAnimal {
-	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("plains"));
+public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob {
+	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("snowy_plains"), new ResourceLocation("plains"),
+			new ResourceLocation("lush_caves"), new ResourceLocation("swamp"));
 
 	@SubscribeEvent
 	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
@@ -81,7 +95,22 @@ public class TbhCreatureEntity extends TamableAnimal {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
+		this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false));
+		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(4, new BreedGoal(this, 1));
+		this.goalSelector.addGoal(5, new OwnerHurtByTargetGoal(this));
+		this.targetSelector.addGoal(6, new OwnerHurtTargetGoal(this));
+		this.goalSelector.addGoal(7, new BreakDoorGoal(this, e -> true));
+		this.goalSelector.addGoal(8, new EatBlockGoal(this));
+		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+			@Override
+			public boolean canContinueToUse() {
+				return this.canUse();
+			}
+		});
 	}
 
 	@Override
@@ -180,6 +209,11 @@ public class TbhCreatureEntity extends TamableAnimal {
 
 		TbhCreatureRightClickedOnEntityProcedure.execute(world, x, y, z, entity);
 		return retval;
+	}
+
+	@Override
+	public void performRangedAttack(LivingEntity target, float flval) {
+		ConfettiEggEntity.shoot(this, target);
 	}
 
 	@Override

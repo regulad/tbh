@@ -6,12 +6,12 @@
     "bucketName": "Cum Bucket",
     "textureStill": "cum_still",
     "textureFlowing": "cum_flowing",
-    "tintType": "No tint",
-    "canMultiply": false,
+    "tintType": "Fog",
+    "canMultiply": true,
     "flowRate": 9,
-    "levelDecrease": 2,
+    "levelDecrease": 3,
     "slopeFindDistance": 4,
-    "spawnParticles": false,
+    "spawnParticles": true,
     "dripParticle": {
       "value": "EXPLOSION_NORMAL"
     },
