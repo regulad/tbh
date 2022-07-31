@@ -68,7 +68,7 @@ import java.util.List;
 @Mod.EventBusSubscriber
 public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob {
 	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("snowy_plains"), new ResourceLocation("plains"),
-			new ResourceLocation("lush_caves"), new ResourceLocation("swamp"));
+			new ResourceLocation("lush_caves"), new ResourceLocation("tbh:cum_biome"), new ResourceLocation("swamp"));
 
 	@SubscribeEvent
 	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {

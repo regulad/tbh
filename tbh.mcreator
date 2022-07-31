@@ -182,6 +182,57 @@
           }
         ]
       }
+    },
+    {
+      "name": "SolidCum",
+      "type": "block",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "solid_cum"
+    },
+    {
+      "name": "CumBlock",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cum_block"
+    },
+    {
+      "name": "ConfettiEggRecipe",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "confetti_egg_recipe"
+    },
+    {
+      "name": "CumBiome",
+      "type": "biome",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cum_biome"
+    },
+    {
+      "name": "CumDimension",
+      "type": "dimension",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cum_dimension",
+      "metadata": {
+        "ep": true
+      }
+    },
+    {
+      "name": "ClintRecipe",
+      "type": "recipe",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clint_recipe"
     }
   ],
   "variable_elements": [],
@@ -214,14 +265,17 @@
   ],
   "language_map": {
     "en_us": {
-      "item.tbh.cum_bucket": "Cum Bucket",
       "item.tbh.tbh_creature_spawn_egg": "Autism Creature Spawn Egg",
-      "item.tbh.confetti_egg": "Confetti Egg",
-      "subtitles.squirt": "Something Squirts",
+      "biome.tbh.cum_biome": "Cum Biome",
       "entity.tbh.tbh_creature": "Autism Creature",
       "subtitles.yippee": "Creature Celebrates ",
-      "fluid.tbh.cum": "Cum",
+      "block.tbh.solid_cum": "Solid Cum",
+      "item.tbh.cum_bucket": "Cum Bucket",
+      "item.tbh.confetti_egg": "Confetti Egg",
+      "subtitles.squirt": "Something Squirts",
       "subtitles.silence": "Creature exudes its presence",
+      "fluid.tbh.cum": "Cum",
+      "item.tbh.cum_dimension": "Clint",
       "block.tbh.cum": "Cum"
     }
   },

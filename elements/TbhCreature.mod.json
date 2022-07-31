@@ -7,9 +7,9 @@
     "mobModelName": "Modeltbh",
     "mobModelTexture": "tbh.png",
     "mobModelGlowTexture": "",
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
-    "modelShadowSize": 0.5,
+    "modelWidth": 0.875,
+    "modelHeight": 0.82,
+    "modelShadowSize": 0.3,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
@@ -143,6 +143,9 @@
       },
       {
         "value": "lush_caves"
+      },
+      {
+        "value": "CUSTOM:CumBiome"
       }
     ],
     "spawnInDungeons": true

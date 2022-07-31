@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345"
+  ],
+  "key": {
+    "1": {
+      "item": "tbh:solid_cum"
+    },
+    "3": {
+      "item": "tbh:solid_cum"
+    },
+    "4": {
+      "item": "tbh:solid_cum"
+    },
+    "5": {
+      "item": "tbh:solid_cum"
+    }
+  },
+  "result": {
+    "item": "tbh:cum_dimension",
+    "count": 1
+  }
+}

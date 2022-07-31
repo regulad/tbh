@@ -37,7 +37,7 @@ public class CumFeature extends LakeFeature {
 		CONFIGURED_FEATURE = FeatureUtils.register("tbh:cum", FEATURE,
 				new LakeFeature.Configuration(BlockStateProvider.simple(TbhModBlocks.CUM.get()), BlockStateProvider.simple(Blocks.AIR)));
 		PLACED_FEATURE = PlacementUtils.register("tbh:cum", CONFIGURED_FEATURE,
-				List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+				List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
 						EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), 32),
 						BiomeFilter.biome()));
 		return FEATURE;
@@ -47,7 +47,7 @@ public class CumFeature extends LakeFeature {
 		return PLACED_FEATURE;
 	}
 
-	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
+	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("tbh:cum_biome"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(Level.OVERWORLD);
 
 	public CumFeature() {

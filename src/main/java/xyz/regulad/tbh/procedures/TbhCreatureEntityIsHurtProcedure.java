@@ -12,15 +12,9 @@ public class TbhCreatureEntityIsHurtProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double baseYVel = 0;
-		if (entity.getDeltaMovement().y() > 0) {
-			baseYVel = 0;
-		} else {
-			baseYVel = entity.getDeltaMovement().y();
-		}
-		entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x()), (baseYVel + 3), (entity.getDeltaMovement().z())));
+		entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x()), 2.4, (entity.getDeltaMovement().z())));
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (TbhModParticleTypes.CONFETTI.get()), x, y, z, 200, (entity.getDeltaMovement().x()),
-					(baseYVel + 3), (entity.getDeltaMovement().z()), 0.5);
+			_level.sendParticles((SimpleParticleType) (TbhModParticleTypes.CONFETTI.get()), x, y, z, 200, (entity.getDeltaMovement().x()), 2.4,
+					(entity.getDeltaMovement().z()), 0.5);
 	}
 }

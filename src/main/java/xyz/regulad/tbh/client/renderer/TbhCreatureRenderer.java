@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 public class TbhCreatureRenderer extends MobRenderer<TbhCreatureEntity, Modeltbh<TbhCreatureEntity>> {
 	public TbhCreatureRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modeltbh(context.bakeLayer(Modeltbh.LAYER_LOCATION)), 0.5f);
+		super(context, new Modeltbh(context.bakeLayer(Modeltbh.LAYER_LOCATION)), 0.3f);
 	}
 
 	@Override

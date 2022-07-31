@@ -27,7 +27,7 @@ public class TbhModEntities {
 			EntityType.Builder.<TbhCreatureEntity>of(TbhCreatureEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(18).setUpdateInterval(3).setCustomClientFactory(TbhCreatureEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.875f, 0.82f));
 	public static final RegistryObject<EntityType<ConfettiEggEntity>> CONFETTI_EGG = register("projectile_confetti_egg",
 			EntityType.Builder.<ConfettiEggEntity>of(ConfettiEggEntity::new, MobCategory.MISC).setCustomClientFactory(ConfettiEggEntity::new)
 					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));

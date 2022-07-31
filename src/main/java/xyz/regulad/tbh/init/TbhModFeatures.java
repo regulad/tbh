@@ -4,6 +4,7 @@
  */
 package xyz.regulad.tbh.init;
 
+import xyz.regulad.tbh.world.features.ores.SolidCumFeature;
 import xyz.regulad.tbh.world.features.lakes.CumFeature;
 import xyz.regulad.tbh.TbhMod;
 
@@ -31,6 +32,8 @@ public class TbhModFeatures {
 	private static final List<FeatureRegistration> FEATURE_REGISTRATIONS = new ArrayList<>();
 	public static final RegistryObject<Feature<?>> CUM = register("cum", CumFeature::feature,
 			new FeatureRegistration(GenerationStep.Decoration.LAKES, CumFeature.GENERATE_BIOMES, CumFeature::placedFeature));
+	public static final RegistryObject<Feature<?>> SOLID_CUM = register("solid_cum", SolidCumFeature::feature,
+			new FeatureRegistration(GenerationStep.Decoration.UNDERGROUND_ORES, SolidCumFeature.GENERATE_BIOMES, SolidCumFeature::placedFeature));
 
 	private static RegistryObject<Feature<?>> register(String registryname, Supplier<Feature<?>> feature, FeatureRegistration featureRegistration) {
 		FEATURE_REGISTRATIONS.add(featureRegistration);

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "tbh:block/cum_dimension_portal_ew"
+    },
+    "axis=x": {
+      "model": "tbh:block/cum_dimension_portal_ns"
+    }
+  }
+}

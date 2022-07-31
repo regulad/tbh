@@ -19,6 +19,7 @@ import xyz.regulad.tbh.init.TbhModFluids;
 import xyz.regulad.tbh.init.TbhModFeatures;
 import xyz.regulad.tbh.init.TbhModEntities;
 import xyz.regulad.tbh.init.TbhModBlocks;
+import xyz.regulad.tbh.init.TbhModBiomes;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -56,6 +57,7 @@ public class TbhMod {
 		TbhModFeatures.REGISTRY.register(bus);
 		TbhModFluids.REGISTRY.register(bus);
 
+		TbhModBiomes.REGISTRY.register(bus);
 		TbhModParticleTypes.REGISTRY.register(bus);
 	}
 

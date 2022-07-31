@@ -40,10 +40,14 @@
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "colorOnMap": "IRON",
-    "frequencyOnChunks": 5,
+    "frequencyOnChunks": 4,
     "spawnWorldTypes": [
       "Surface"
     ],
-    "restrictionBiomes": []
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:CumBiome"
+      }
+    ]
   }
 }
