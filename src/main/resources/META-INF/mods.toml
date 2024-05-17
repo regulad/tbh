@@ -9,9 +9,7 @@ displayName="tbh"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
 authors="regulad"
-description='''
-Yippee!
-'''
+description="Yippee!"
 
 [[dependencies.tbh]]
     modId="minecraft"

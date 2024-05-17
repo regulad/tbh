@@ -1,6 +1,5 @@
 {
   "squirt": {
-    "category": "neutral",
     "subtitle": "subtitles.squirt",
     "sounds": [
       {
@@ -14,7 +13,6 @@
     ]
   },
   "yippee": {
-    "category": "neutral",
     "subtitle": "subtitles.yippee",
     "sounds": [
       {
@@ -24,7 +22,6 @@
     ]
   },
   "silence": {
-    "category": "neutral",
     "subtitle": "subtitles.silence",
     "sounds": [
       {

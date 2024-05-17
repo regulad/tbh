@@ -38,28 +38,19 @@ public class Modeltbh<T extends Entity> extends EntityModel<T> {
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition body = partdefinition.addOrReplaceChild("body",
-				CubeListBuilder.create().texOffs(0, 13).addBox(-3.0F, -8.0F, -3.0F, 6.0F, 4.0F, 8.0F, new CubeDeformation(0.0F)),
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 13).addBox(-3.0F, -8.0F, -3.0F, 6.0F, 4.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition rightleg = partdefinition.addOrReplaceChild("rightleg",
+				CubeListBuilder.create().texOffs(0, 25).addBox(-3.0F, -5.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(8, 25).addBox(1.0F, -5.0F, 3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition rightleg = partdefinition
-				.addOrReplaceChild("rightleg",
-						CubeListBuilder.create().texOffs(0, 25).addBox(-3.0F, -5.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
-								.texOffs(8, 25).addBox(1.0F, -5.0F, 3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
-						PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition leftleg = partdefinition
-				.addOrReplaceChild("leftleg",
-						CubeListBuilder.create().texOffs(20, 13).addBox(1.0F, -5.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
-								.texOffs(0, 13).addBox(-3.0F, -5.0F, 3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
-						PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition head = partdefinition.addOrReplaceChild("head",
-				CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -13.0F, -7.0F, 8.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)),
+		PartDefinition leftleg = partdefinition.addOrReplaceChild("leftleg",
+				CubeListBuilder.create().texOffs(20, 13).addBox(1.0F, -5.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 13).addBox(-3.0F, -5.0F, 3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -13.0F, -7.0F, 8.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green,
-			float blue, float alpha) {
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		rightleg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		leftleg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);

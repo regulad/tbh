@@ -15,11 +15,7 @@ package xyz.regulad.tbh;
 
 import xyz.regulad.tbh.init.TbhModParticleTypes;
 import xyz.regulad.tbh.init.TbhModItems;
-import xyz.regulad.tbh.init.TbhModFluids;
-import xyz.regulad.tbh.init.TbhModFeatures;
 import xyz.regulad.tbh.init.TbhModEntities;
-import xyz.regulad.tbh.init.TbhModBlocks;
-import xyz.regulad.tbh.init.TbhModBiomes;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -43,26 +39,21 @@ public class TbhMod {
 	public static final Logger LOGGER = LogManager.getLogger(TbhMod.class);
 	public static final String MODID = "tbh";
 	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION,
-			PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	private static int messageID = 0;
 
 	public TbhMod() {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		TbhModBlocks.REGISTRY.register(bus);
+
 		TbhModItems.REGISTRY.register(bus);
 		TbhModEntities.REGISTRY.register(bus);
 
-		TbhModFeatures.REGISTRY.register(bus);
-		TbhModFluids.REGISTRY.register(bus);
-
-		TbhModBiomes.REGISTRY.register(bus);
 		TbhModParticleTypes.REGISTRY.register(bus);
+
 	}
 
-	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,
-			BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
+	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
 		PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
 		messageID++;
 	}

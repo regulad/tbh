@@ -1,10 +1,8 @@
 
 package xyz.regulad.tbh.entity;
 
-import xyz.regulad.tbh.procedures.TbhCreatureRightClickedOnEntityProcedure;
 import xyz.regulad.tbh.procedures.TbhCreatureOnInitialEntitySpawnProcedure;
 import xyz.regulad.tbh.procedures.TbhCreatureEntityIsHurtProcedure;
-import xyz.regulad.tbh.init.TbhModItems;
 import xyz.regulad.tbh.init.TbhModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -48,7 +46,6 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
@@ -67,8 +64,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber
 public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob {
-	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("snowy_plains"), new ResourceLocation("plains"),
-			new ResourceLocation("lush_caves"), new ResourceLocation("tbh:cum_biome"), new ResourceLocation("swamp"));
+	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("snowy_plains"), new ResourceLocation("plains"), new ResourceLocation("lush_caves"), new ResourceLocation("swamp"));
 
 	@SubscribeEvent
 	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
@@ -82,6 +78,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 
 	public TbhCreatureEntity(EntityType<TbhCreatureEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
@@ -105,7 +102,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 		this.goalSelector.addGoal(8, new EatBlockGoal(this));
 		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(10, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10f) {
 			@Override
 			public boolean canContinueToUse() {
 				return this.canUse();
@@ -125,7 +122,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 
 	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(TbhModItems.CUM_BUCKET.get()));
+		this.spawnAtLocation(new ItemStack(Blocks.CANDLE));
 	}
 
 	@Override
@@ -152,8 +149,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
-			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		TbhCreatureOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
@@ -167,9 +163,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 		if (itemstack.getItem() instanceof SpawnEggItem) {
 			retval = super.mobInteract(sourceentity, hand);
 		} else if (this.level.isClientSide()) {
-			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack))
-					? InteractionResult.sidedSuccess(this.level.isClientSide())
-					: InteractionResult.PASS;
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level.isClientSide()) : InteractionResult.PASS;
 		} else {
 			if (this.isTame()) {
 				if (this.isOwnedBy(sourceentity)) {
@@ -201,13 +195,6 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 					this.setPersistenceRequired();
 			}
 		}
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level;
-
-		TbhCreatureRightClickedOnEntityProcedure.execute(world, x, y, z, entity);
 		return retval;
 	}
 
@@ -230,8 +217,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 
 	public static void init() {
 		SpawnPlacements.register(TbhModEntities.TBH_CREATURE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos,
-						random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
 		DungeonHooks.addDungeonMob(TbhModEntities.TBH_CREATURE.get(), 180);
 	}
 
@@ -241,6 +227,7 @@ public class TbhCreatureEntity extends TamableAnimal implements RangedAttackMob 
 		builder = builder.add(Attributes.MAX_HEALTH, 10);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}
 }

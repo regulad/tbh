@@ -24,13 +24,11 @@ import net.minecraft.world.entity.Entity;
 public class TbhModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, TbhMod.MODID);
 	public static final RegistryObject<EntityType<TbhCreatureEntity>> TBH_CREATURE = register("tbh_creature",
-			EntityType.Builder.<TbhCreatureEntity>of(TbhCreatureEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(18).setUpdateInterval(3).setCustomClientFactory(TbhCreatureEntity::new)
+			EntityType.Builder.<TbhCreatureEntity>of(TbhCreatureEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(18).setUpdateInterval(3).setCustomClientFactory(TbhCreatureEntity::new)
 
 					.sized(0.875f, 0.82f));
 	public static final RegistryObject<EntityType<ConfettiEggEntity>> CONFETTI_EGG = register("projectile_confetti_egg",
-			EntityType.Builder.<ConfettiEggEntity>of(ConfettiEggEntity::new, MobCategory.MISC).setCustomClientFactory(ConfettiEggEntity::new)
-					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+			EntityType.Builder.<ConfettiEggEntity>of(ConfettiEggEntity::new, MobCategory.MISC).setCustomClientFactory(ConfettiEggEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

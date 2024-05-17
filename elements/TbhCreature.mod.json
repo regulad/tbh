@@ -1,12 +1,15 @@
 {
-  "_fv": 28,
+  "_fv": 47,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Autism Creature",
+    "mobName": "TBH Creature",
     "mobLabel": "",
     "mobModelName": "Modeltbh",
     "mobModelTexture": "tbh.png",
     "mobModelGlowTexture": "",
+    "solidBoundingBox": {
+      "fixedValue": false
+    },
     "modelWidth": 0.875,
     "modelHeight": 0.82,
     "modelShadowSize": 0.3,
@@ -50,8 +53,10 @@
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.4,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 18,
+    "followRange": 16,
     "health": 10,
     "xpAmount": 0,
     "waterMob": false,
@@ -77,7 +82,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:Cum.bucket"
+      "value": "Blocks.CANDLE#0"
     },
     "livingSound": {
       "value": "CUSTOM:silence"
@@ -91,18 +96,8 @@
     "stepSound": {
       "value": ""
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "CUSTOM:Confetti"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 6,
     "whenMobIsHurt": {
       "name": "TbhCreatureEntityIsHurt"
-    },
-    "onRightClickedOn": {
-      "name": "TbhCreatureRightClickedOnEntity"
     },
     "onInitialSpawn": {
       "name": "TbhCreatureOnInitialEntitySpawn"
@@ -122,6 +117,8 @@
       "value": ""
     },
     "rangedItemType": "ConfettiEgg",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 18,
@@ -143,9 +140,6 @@
       },
       {
         "value": "lush_caves"
-      },
-      {
-        "value": "CUSTOM:CumBiome"
       }
     ],
     "spawnInDungeons": true

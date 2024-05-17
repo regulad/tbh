@@ -14,7 +14,6 @@ public class TbhCreatureEntityIsHurtProcedure {
 			return;
 		entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x()), 2.4, (entity.getDeltaMovement().z())));
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (TbhModParticleTypes.CONFETTI.get()), x, y, z, 200, (entity.getDeltaMovement().x()), 2.4,
-					(entity.getDeltaMovement().z()), 0.5);
+			_level.sendParticles((SimpleParticleType) (TbhModParticleTypes.CONFETTI.get()), x, y, z, 200, (entity.getDeltaMovement().x()), 2.4, (entity.getDeltaMovement().z()), 0.5);
 	}
 }

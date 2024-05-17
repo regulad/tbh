@@ -6,17 +6,13 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tbh_creature"
-    },
-    {
-      "name": "Cum",
-      "type": "fluid",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cum",
+      "registry_name": "tbh_creature",
       "metadata": {
-        "gb": true
+        "files": [
+          "src/main/java/xyz/regulad/tbh/client/renderer/TbhCreatureRenderer.java",
+          "src/main/java/xyz/regulad/tbh/entity/TbhCreatureEntity.java",
+          "src/main/resources/assets/tbh/models/item/tbh_creature_spawn_egg.json"
+        ]
       }
     },
     {
@@ -25,7 +21,13 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "confetti"
+      "registry_name": "confetti",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tbh/particles/confetti.json",
+          "src/main/java/xyz/regulad/tbh/client/particle/ConfettiParticle.java"
+        ]
+      }
     },
     {
       "name": "TbhCreatureEntityIsHurt",
@@ -35,38 +37,9 @@
       "locked_code": false,
       "registry_name": "tbh_creature_entity_is_hurt",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "TbhCreatureRightClickedOnEntity",
-      "type": "procedure",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tbh_creature_right_clicked_on_entity",
-      "metadata": {
+        "files": [
+          "src/main/java/xyz/regulad/tbh/procedures/TbhCreatureEntityIsHurtProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -99,6 +72,9 @@
       "locked_code": false,
       "registry_name": "tbh_creature_on_initial_entity_spawn",
       "metadata": {
+        "files": [
+          "src/main/java/xyz/regulad/tbh/procedures/TbhCreatureOnInitialEntitySpawnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -125,7 +101,14 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "confetti_egg"
+      "registry_name": "confetti_egg",
+      "metadata": {
+        "files": [
+          "src/main/java/xyz/regulad/tbh/item/ConfettiEggItem.java",
+          "src/main/java/xyz/regulad/tbh/entity/ConfettiEggEntity.java",
+          "src/main/resources/assets/tbh/models/item/confetti_egg.json"
+        ]
+      }
     },
     {
       "name": "ConfettiEggWhileProjectileFlyingTick",
@@ -135,6 +118,9 @@
       "locked_code": false,
       "registry_name": "confetti_egg_while_projectile_flying_tick",
       "metadata": {
+        "files": [
+          "src/main/java/xyz/regulad/tbh/procedures/ConfettiEggWhileProjectileFlyingTickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -163,6 +149,9 @@
       "locked_code": false,
       "registry_name": "confetti_egg_projectile_hits_block",
       "metadata": {
+        "files": [
+          "src/main/java/xyz/regulad/tbh/procedures/ConfettiEggProjectileHitsBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -184,55 +173,17 @@
       }
     },
     {
-      "name": "SolidCum",
-      "type": "block",
-      "sortid": 10,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "solid_cum"
-    },
-    {
-      "name": "CumBlock",
-      "type": "recipe",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cum_block"
-    },
-    {
       "name": "ConfettiEggRecipe",
       "type": "recipe",
       "sortid": 12,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "confetti_egg_recipe"
-    },
-    {
-      "name": "CumBiome",
-      "type": "biome",
-      "sortid": 13,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cum_biome"
-    },
-    {
-      "name": "CumDimension",
-      "type": "dimension",
-      "sortid": 14,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cum_dimension",
+      "registry_name": "confetti_egg_recipe",
       "metadata": {
-        "ep": true
+        "files": [
+          "src/main/resources/data/tbh/recipes/confetti_egg_recipe.json"
+        ]
       }
-    },
-    {
-      "name": "ClintRecipe",
-      "type": "recipe",
-      "sortid": 15,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "clint_recipe"
     }
   ],
   "variable_elements": [],
@@ -265,18 +216,12 @@
   ],
   "language_map": {
     "en_us": {
-      "item.tbh.tbh_creature_spawn_egg": "Autism Creature Spawn Egg",
-      "biome.tbh.cum_biome": "Cum Biome",
-      "entity.tbh.tbh_creature": "Autism Creature",
+      "item.tbh.tbh_creature_spawn_egg": "TBH Creature Spawn Egg",
       "subtitles.yippee": "Creature Celebrates ",
-      "block.tbh.solid_cum": "Solid Cum",
-      "item.tbh.cum_bucket": "Cum Bucket",
+      "entity.tbh.tbh_creature": "TBH Creature",
       "item.tbh.confetti_egg": "Confetti Egg",
       "subtitles.squirt": "Something Squirts",
-      "subtitles.silence": "Creature exudes its presence",
-      "fluid.tbh.cum": "Cum",
-      "item.tbh.cum_dimension": "Clint",
-      "block.tbh.cum": "Cum"
+      "subtitles.silence": "Creature exudes its presence"
     }
   },
   "foldersRoot": {
@@ -300,5 +245,5 @@
     "modElementsPackage": "xyz.regulad.tbh",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202300336712
 }

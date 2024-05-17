@@ -1,14 +1,8 @@
 {
-  "item.tbh.tbh_creature_spawn_egg": "Autism Creature Spawn Egg",
-  "biome.tbh.cum_biome": "Cum Biome",
-  "entity.tbh.tbh_creature": "Autism Creature",
+  "item.tbh.tbh_creature_spawn_egg": "TBH Creature Spawn Egg",
   "subtitles.yippee": "Creature Celebrates ",
-  "block.tbh.solid_cum": "Solid Cum",
-  "item.tbh.cum_bucket": "Cum Bucket",
+  "entity.tbh.tbh_creature": "TBH Creature",
   "item.tbh.confetti_egg": "Confetti Egg",
   "subtitles.squirt": "Something Squirts",
-  "subtitles.silence": "Creature exudes its presence",
-  "fluid.tbh.cum": "Cum",
-  "item.tbh.cum_dimension": "Clint",
-  "block.tbh.cum": "Cum"
+  "subtitles.silence": "Creature exudes its presence"
 }

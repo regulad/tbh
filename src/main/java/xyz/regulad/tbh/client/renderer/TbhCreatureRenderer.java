@@ -15,6 +15,6 @@ public class TbhCreatureRenderer extends MobRenderer<TbhCreatureEntity, Modeltbh
 
 	@Override
 	public ResourceLocation getTextureLocation(TbhCreatureEntity entity) {
-		return new ResourceLocation("tbh:textures/tbh.png");
+		return new ResourceLocation("tbh:textures/entities/tbh.png");
 	}
 }
